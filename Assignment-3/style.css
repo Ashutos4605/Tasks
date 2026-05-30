@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#17052e,#43116d,#6b21a8);
+    min-height:100vh;
+    padding:50px;
+    font-family:Arial,sans-serif;
+}
+
+.explore-art{
+    max-width:1300px;
+    margin:auto;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.header h2{
+    color:white;
+}
+
+.header a{
+    color:white;
+    text-decoration:none;
+}
+
+.art-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.card{
+    width:280px;
+    background:rgba(255,255,255,0.08);
+    border-radius:25px;
+    padding:15px;
+    position:relative;
+}
+
+.image-box{
+    position:relative;
+}
+
+.image-box img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+}
+
+
+.image-box::after{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:rgba(0,0,0,0.5);
+    color:white;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card-content{
+    margin-top:15px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title-row h3{
+    color:white;
+}
+
+.title-row span{
+    color:#ddd;
+}
+
+button{
+    padding:12px;
+    border-radius:30px;
+    border:2px solid #b56cff;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+}
