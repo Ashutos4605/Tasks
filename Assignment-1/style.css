@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 40px);
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 55%;
+    background-color: #f5c518;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    overflow: hidden;
+}
+
+.right-panel {
+    width: 45%;
+    background-color: #f5e6c8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 40px 50px;
+}
+
+.navbar {
+    margin-bottom: 60px;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 96px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    max-width: 360px;
+    margin-bottom: 40px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.line {
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background-color: #1a1a1a;
+}
+
+.page-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+}
+
+.pokeball-bg {
+    position: absolute;
+    bottom: -80px;
+    left: 60px;
+    z-index: 1;
+    opacity: 0.15;
+}
+
+.pokeball-icon {
+    width: 250px;
+    height: 250px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background-color: #1a1a1a;
+    border-radius: 2px;
+}
+
+.dots {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #c4a86b;
+}
+
+.dot.active {
+    width: 12px;
+    height: 12px;
+    background-color: #1a1a1a;
+}
+
+.pikachu-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.pikachu-img {
+    width: 550px;
+    height: auto;
+}
