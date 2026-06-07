@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    display: flex;
+   
+    align-items: center;
+
+    padding: 20px 40px;
+    gap: 40px;
+}
+
+.center1{
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    width: 110px;
+}
+
+button{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+}
+.center {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 40px;
+}
+.dis h1{
+    font-weight: 400;
+    font-size: 80px;
+}
+.exp p{
+    font-size: 22px;
+    margin: 20px;
+}
+.input{
+    display: flex;
+    align-items: center;
+    width: 750px;
+    height: 69px;
+    background: #f3f3f5;
+    border-radius: 40px;
+    padding: 0 15px ;
+    margin-left: 400px;
+    padding-right: 8px;
+    transition: linear 0.3s ease;
+}
+.input:hover{
+    background: transparent;
+    box-shadow: 0 4px 20px rgb(253, 252, 252);
+}
+
+.input input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.category{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.input button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #ea4c89;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 0;
+}
+.input button{
+    padding: 0;
+    outline: none;
+}
+.trend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    background: transparent;
+}
+.trend a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    background: #f3f3f5;
+    padding: 12px 24px;
+    border-radius: 999px;
+    transition: all ease 0.3s;
+}
+.trend a:hover{
+    background: transparent;
+    box-shadow: 0 4px 2px white;
+}
+.trend span{
+   color: #9a9a9a;
+    font-size: 22px;
+    background: transparent;
+}
+.right-btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    font-weight: 600;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+}
+.footer-center{
+    display: flex;
+    gap: 5px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    background: #f3f3f5;
+    padding: 8px 18px;
+    border-radius: 999px;
+}
+
+
+.footer-left h1,
+.footer-right h1{
+    font-size: 18px;
+    font-weight: 500;
+
+    border: 1px solid #ccc;
+    border-radius: 30px;
+
+    padding: 12px 25px;
+    margin: 0 auto;
+}
+
+.footer-right h1 i{
+    margin-right: 8px;
+}
+.footer-left{
+    margin-right: auto;
+}
+.footer-right{
+    margin-left: auto;
+}
+
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    
+    gap:30px;
+    padding:14px;
+}
+.creator img{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+.creator{
+    display: flex;
+    gap: 10px;
+}
+.stats{
+    display: flex;
+}
+.card-image img,
+.card-image video{
+    width:328px;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+}
+.creator{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.creator span{
+  
+    background: #b0b0b0;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.parent{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    padding: 10px;
+    overflow: hidden;
+    gap: 40px;
+}
+.inner{
+    display: flex;
+    padding: 20px;
+    animation-name: move;
+    animation-timing-function:linear;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    gap: 70px;
+    flex-shrink: 0;
+}
+
+h4{
+    font-size: 25px;
+    color: white;
+    padding: 20px;
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+.bottom-{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:120px;
+    margin-top: -60px;
+    width: 100%;
+}
+.center2{
+    display: flex;
+    gap: 60px;
+}
+.bottom- img{
+    width: 140px;
+} 
+.center2 a{
+    font-weight: bold;
+}
+.footer2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+    margin-top: -180px;
+    opacity: 0.7;
+}
+.footerleft,
+.footerright{
+    gap: 30px;
+    display: flex;
+}
+.signbutton{
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    position: relative;
+    margin: 20px;
+}
+
+
+.card-image{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.8) 0%,
+        rgba(0,0,0,.45) 45%,
+        transparent 100%
+    );
+
+    opacity: 0;
+    transition: .3s ease;
+    color: white;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.overlay-left h3{
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.overlay-right{
+    display: flex;
+    gap: 12px;
+}
+
+.overlay-right i{
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+    font-size: 20px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.card:hover .card-image img{
+    transform: scale(1.05);
+}
+.overlay h3{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+.card-image img,
+.card-image video{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.card:hover .card-image img,
+.card:hover .card-image video{
+    transform: scale(1.05);
+}
