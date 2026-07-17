@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskManager – Your Productivity Hub</title>
+    <meta name="description" content="A comprehensive productivity dashboard with todo lists, daily planner, pomodoro timer, weather widget, and more.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="ri-check-double-line"></i>
+                </div>
+                <div class="brand-text">
+                    <h3>TaskManager</h3>
+                    <p>Your Productivity Hub</p>
+                </div>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#" class="nav-link active" data-section="dashboard" id="nav-dashboard">
+                    <i class="ri-dashboard-3-line"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-link" data-section="todo" id="nav-todo">
+                    <i class="ri-todo-line"></i><span>Todo List</span>
+                </a>
+                <a href="#" class="nav-link" data-section="planner" id="nav-planner">
+                    <i class="ri-calendar-schedule-line"></i><span>Daily Planner</span>
+                </a>
+                <a href="#" class="nav-link" data-section="goals" id="nav-goals">
+                    <i class="ri-focus-2-line"></i><span>Daily Goals</span>
+                </a>
+                <a href="#" class="nav-link" data-section="pomodoro" id="nav-pomodoro">
+                    <i class="ri-timer-line"></i><span>Pomodoro Timer</span>
+                </a>
+                <a href="#" class="nav-link" data-section="motivation" id="nav-motivation">
+                    <i class="ri-double-quotes-l"></i><span>Motivation</span>
+                </a>
+                <a href="#" class="nav-link" data-section="weather" id="nav-weather">
+                    <i class="ri-cloud-line"></i><span>Weather</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="theme-toggle-wrapper">
+                <span class="theme-label"><i class="ri-moon-line"></i> Dark</span>
+                <label class="theme-switch" id="theme-switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-label"><i class="ri-sun-line"></i> Light</span>
+            </div>
+            <div class="motivational-card">
+                <h4>Stay consistent!</h4>
+                <p>Small steps every day lead to big results.</p>
+                <div class="motivational-graphic">
+                    <div class="bar" style="height:30%"></div>
+                    <div class="bar" style="height:50%"></div>
+                    <div class="bar" style="height:40%"></div>
+                    <div class="bar" style="height:70%"></div>
+                    <div class="bar" style="height:60%"></div>
+                    <div class="bar" style="height:90%"></div>
+                    <div class="bar" style="height:80%"></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content" id="main-content">
+
+        <header class="main-header" id="main-header">
+            <div class="header-left">
+                <h1 id="greeting-text">Good Evening! 👋</h1>
+                <p class="subtitle">Let's make today productive and meaningful.</p>
+            </div>
+            <div class="header-right">
+                <div class="datetime-widget" id="datetime-widget">
+                    <div class="date-text" id="date-text">Monday, 26 May 2025</div>
+                    <div class="time-text" id="time-text">07:45 PM</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="view active" id="view-dashboard">
+            <div class="dashboard-grid">
+
+                <div class="card progress-card" id="progress-card">
+                    <h2 class="card-title"><i class="ri-pie-chart-2-line"></i> Today's Progress</h2>
+                    <div class="progress-content">
+                        <div class="progress-ring-container">
+                            <svg class="progress-ring" viewBox="0 0 120 120">
+                                <circle class="progress-ring-bg" cx="60" cy="60" r="50"/>
+                                <circle class="progress-ring-fill" cx="60" cy="60" r="50" id="progress-ring-fill"/>
+                            </svg>
+                            <div class="progress-percent" id="progress-percent">
+                                <span class="percent-num">0</span>%
+                                <small>Tasks Completed</small>
+                            </div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon completed"><i class="ri-checkbox-circle-fill"></i></span>
+                                <span class="stat-label">Completed</span>
+                                <span class="stat-value" id="stat-completed">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon pending"><i class="ri-time-fill"></i></span>
+                                <span class="stat-label">Pending</span>
+                                <span class="stat-value" id="stat-pending">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon total"><i class="ri-list-check-3"></i></span>
+                                <span class="stat-label">Total Tasks</span>
+                                <span class="stat-value" id="stat-total">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link" data-section="todo">View Your Tasks <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div class="card quote-card" id="quote-card">
+                    <div class="quote-overlay">
+                        <span class="quote-icon">❝</span>
+                        <h2 class="card-title">Daily Quote</h2>
+                        <blockquote id="dashboard-quote-text">"The secret of getting ahead is getting started."</blockquote>
+                        <cite id="dashboard-quote-author">— Mark Twain</cite>
+                    </div>
+                </div>
+
+                <div class="card goals-card" id="goals-card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-focus-2-line"></i> Today's Goals</h2>
+                        <span class="goals-count" id="goals-count-badge">0/0 Completed</span>
+                    </div>
+                    <ul class="goals-preview-list" id="goals-preview-list">
+                        <li class="empty-state"><i class="ri-add-circle-line"></i> Add your first goal</li>
+                    </ul>
+                    <a href="#" class="card-link" data-section="goals">View All Goals <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div class="card planner-card" id="planner-card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-calendar-schedule-line"></i> Upcoming Planner</h2>
+                        <a href="#" class="card-link inline" data-section="planner">View Full Planner <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <ul class="planner-preview-list" id="planner-preview-list">
+                        <li class="empty-state"><i class="ri-add-circle-line"></i> Plan your day</li>
+                    </ul>
+                </div>
+
+                <div class="card tasks-card" id="tasks-card">
+                    <div class="card-header">
+                        <div class="tasks-header-left">
+                            <h2 class="card-title">Your Tasks</h2>
+                            <div class="task-filters" id="task-filters">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="completed">Completed</button>
+                                <button class="filter-btn" data-filter="pending">Pending</button>
+                                <button class="filter-btn" data-filter="important">Important</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary" id="quick-add-task-btn"><i class="ri-add-line"></i> Add Task</button>
+                    </div>
+                    <ul class="task-list" id="dashboard-task-list">
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="dashboard-footer">
+                <p>Stay focused. Stay consistent. You've got this! 🚀</p>
+            </footer>
+        </section>
+
+        <section class="view" id="view-todo">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-todo-line"></i> Todo List</h2>
+            </div>
+            <div class="todo-container">
+                <div class="todo-input-bar">
+                    <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
+                    <select id="todo-category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Health">Health</option>
+                    </select>
+                    <button class="btn-primary" id="add-todo-btn"><i class="ri-add-line"></i> Add Task</button>
+                </div>
+                <div class="todo-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="important">Important</button>
+                </div>
+                <ul class="task-list full-list" id="todo-list">
+                </ul>
+            </div>
+        </section>
+
+        <section class="view" id="view-planner">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-calendar-schedule-line"></i> Daily Planner</h2>
+            </div>
+            <div class="planner-container" id="planner-container">
+            </div>
+        </section>
+
+        <section class="view" id="view-goals">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-focus-2-line"></i> Daily Goals</h2>
+            </div>
+            <div class="goals-container">
+                <div class="goals-input-bar">
+                    <input type="text" id="goal-input" placeholder="Add a new goal..." autocomplete="off">
+                    <button class="btn-primary" id="add-goal-btn"><i class="ri-add-line"></i> Add Goal</button>
+                </div>
+                <div class="goals-progress-bar-container">
+                    <div class="goals-progress-info">
+                        <span id="goals-progress-text">0 of 0 completed</span>
+                        <span id="goals-progress-percent">0%</span>
+                    </div>
+                    <div class="goals-progress-bar">
+                        <div class="goals-progress-fill" id="goals-progress-fill"></div>
+                    </div>
+                </div>
+                <ul class="goal-list" id="goal-list">
+                </ul>
+            </div>
+        </section>
+
+        <section class="view" id="view-pomodoro">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-timer-line"></i> Pomodoro Timer</h2>
+            </div>
+            <div class="pomodoro-container">
+                <div class="pomodoro-display">
+                    <div class="pomodoro-ring">
+                        <svg viewBox="0 0 200 200">
+                            <circle class="pomo-ring-bg" cx="100" cy="100" r="90"/>
+                            <circle class="pomo-ring-fill" cx="100" cy="100" r="90" id="pomo-ring-fill"/>
+                        </svg>
+                        <div class="pomo-time" id="pomo-time">25:00</div>
+                    </div>
+                    <div class="pomo-session-label" id="pomo-session-label">Work Session</div>
+                </div>
+                <div class="pomo-controls">
+                    <button class="pomo-btn" id="pomo-start"><i class="ri-play-fill"></i> Start</button>
+                    <button class="pomo-btn" id="pomo-pause"><i class="ri-pause-fill"></i> Pause</button>
+                    <button class="pomo-btn" id="pomo-reset"><i class="ri-restart-line"></i> Reset</button>
+                </div>
+                <div class="pomo-settings">
+                    <label>Work: <input type="number" id="pomo-work-mins" value="25" min="1" max="60"> min</label>
+                    <label>Break: <input type="number" id="pomo-break-mins" value="5" min="1" max="30"> min</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="view" id="view-motivation">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-double-quotes-l"></i> Motivation</h2>
+            </div>
+            <div class="motivation-container">
+                <div class="motivation-card-full">
+                    <span class="big-quote-icon">❝</span>
+                    <blockquote id="motivation-quote-text">Click below to get inspired!</blockquote>
+                    <cite id="motivation-quote-author"></cite>
+                    <button class="btn-primary" id="new-quote-btn"><i class="ri-refresh-line"></i> New Quote</button>
+                    <div class="quote-loader hidden" id="quote-loader">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="view" id="view-weather">
+            <div class="view-header">
+                <button class="back-btn" data-section="dashboard"><i class="ri-arrow-left-line"></i> Back</button>
+                <h2><i class="ri-cloud-line"></i> Weather</h2>
+            </div>
+            <div class="weather-container">
+                <div class="weather-main-card" id="weather-main-card">
+                    <div class="weather-loading" id="weather-loading">
+                        <div class="spinner"></div>
+                        <p>Fetching weather data...</p>
+                    </div>
+                    <div class="weather-content hidden" id="weather-content">
+                        <div class="weather-top">
+                            <div class="weather-location">
+                                <i class="ri-map-pin-line"></i>
+                                <span id="weather-city">--</span>
+                            </div>
+                            <div class="weather-temp-main">
+                                <span class="weather-icon-big" id="weather-icon-big">☀️</span>
+                                <span class="weather-temp" id="weather-temp">--°C</span>
+                            </div>
+                            <span class="weather-desc" id="weather-desc">--</span>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-detail-item">
+                                <i class="ri-drop-line"></i>
+                                <span>Humidity</span>
+                                <strong id="weather-humidity">--%</strong>
+                            </div>
+                            <div class="weather-detail-item">
+                                <i class="ri-windy-line"></i>
+                                <span>Wind</span>
+                                <strong id="weather-wind">-- km/h</strong>
+                            </div>
+                            <div class="weather-detail-item">
+                                <i class="ri-temp-hot-line"></i>
+                                <span>Feels Like</span>
+                                <strong id="weather-feels">--°C</strong>
+                            </div>
+                            <div class="weather-detail-item">
+                                <i class="ri-eye-line"></i>
+                                <span>Visibility</span>
+                                <strong id="weather-visibility">-- km</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weather-error hidden" id="weather-error">
+                        <i class="ri-error-warning-line"></i>
+                        <p>Unable to fetch weather data.</p>
+                        <button class="btn-primary" id="weather-retry-btn">Retry</button>
+                    </div>
+                </div>
+                <div class="weather-search">
+                    <input type="text" id="weather-search-input" placeholder="Search city..." autocomplete="off">
+                    <button class="btn-primary" id="weather-search-btn"><i class="ri-search-line"></i> Search</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
